@@ -20,9 +20,12 @@ Login and Register Screen:
 
 ![Screenshot 2020-05-15 at 22 01 02](https://user-images.githubusercontent.com/51440957/82091453-ac4c6e00-96f7-11ea-9b49-26c2699ddd53.png)
 
+
 Dashboard:
+
 ![Screenshot 2020-05-15 at 22 01 38](https://user-images.githubusercontent.com/51440957/82091515-c5edb580-96f7-11ea-94b8-394307288bfb.png)
 
 Nutrition Capture Screen:
+
 ![Screenshot 2020-05-15 at 22 02 50](https://user-images.githubusercontent.com/51440957/82091582-ec135580-96f7-11ea-9eb4-928dca940631.png)
 
