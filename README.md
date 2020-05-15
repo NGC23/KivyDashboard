@@ -7,3 +7,6 @@ Please note this is a first Poc Application built using KIVY, this was purely fo
   - This application consists of Authentication step that leads user to a dashboard
   - I have built a nav menu(widget) that i include throughout my application used for navigation purposes
   - Backend is Full blown Python : )
+
+
+Here are some little screenshots, Please note this is the KivyMD theme and not basic Kivy
