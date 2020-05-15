@@ -1,0 +1,77 @@
+<FoodDiary>:
+
+    MDToolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        elevation: 10
+        title: "Chopping Block"
+        left_action_items: [["dots-vertical", lambda x: nav_drawer.set_state("open")]]
+
+    NavigationLayout:
+        x: toolbar.height
+
+        ScreenManager:
+            id: scr_mngr
+
+            Screen:
+
+                GridLayout:
+                    id: gird_1
+                    cols: 1
+                    pos_hint: {"top": 0.9}
+                    size_hint_y: None
+
+                    MDLabel:
+                        text: 'Food Diary'
+                        font_style: 'H6'
+                        halign: "center"
+
+                GridLayout:
+                    id: gird_2
+                    cols: 1
+                    pos_hint: {"top": 0.8}
+                    size_hint_y: None
+
+                    MDCard:
+                        orientation: "vertical"
+                        padding: "8dp"
+                        size_hint: None, None
+
+                        MDLabel:
+                            text: "Title"
+                            theme_text_color: "Secondary"
+                            size_hint_y: None
+                            height: self.texture_size[1]
+
+                        MDSeparator:
+                            height: "1dp"
+
+                        MDLabel:
+                            text: "Body"
+
+                GridLayout:
+                    id: gird_3
+                    cols: 1
+                    pos_hint: {"top": 0.7}
+                    size_hint_y: None
+
+                    MDLabel:
+                        text: "Items added on  " + root.date_diary
+                        font_style: 'Subtitle1'
+
+                BoxLayout:
+
+                    MDRoundFlatButton:
+                        text: "Add to diary"
+                        on_release: root.load_add_item_screen()
+
+                    MDRoundFlatButton:
+                        text: "Search"
+                        on_release: root.show_alert_dialog()
+
+        NavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: scr_mngr
+                nav_drawer: nav_drawer

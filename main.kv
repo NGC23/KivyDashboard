@@ -1,0 +1,70 @@
+# So this is basically the loading component for all the screens in the application for the screen manager
+# With this we can load all our screens here in order, the clean way to do this is to create the,
+# respective kv file in the domain with the controller file, model and the repo,
+# Lets see if the approach works out for me
+
+#:include app/Authentication/login/kv/login.kv
+#:include app/Authentication/register/kv/register.kv
+#:include app/Dashboard/kv/dashboard.kv
+#:include app/Nutrition/kv/itemAdd.kv
+#:include app/Nutrition/kv/foodDiary.kv
+#:include app/Nav/nav.kv
+
+<ScreenManagement>:
+    id: scr_mngr
+    MainAppScreen:
+        name: 'main'
+        id: main
+    RegisterScreen:
+        name: 'register'
+        id: register
+    LoginScreen:
+        name: 'login'
+        id: login
+    Dashboard:
+        name: 'dashboard'
+        id: dashboard
+    FoodDiary:
+        name: 'FoodDiary'
+        id: FoodDiary
+    ItemAdd:
+        name: 'ItemAdd'
+        id: ItemAdd
+
+# This is an example of an screen element, i prefer to do this this waym feels much cleaner, so for example, for this screen,
+# i can create an kv file in the domain location, then import it using
+<MainAppScreen>:
+    # This is settings for the screen itself
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {'y': .5}
+        # Remember to add orientation param to the box layout, otherwise all the elements will bundle at the bottom of the screen
+        # These are widgets that go into the screen
+        Label:
+            text: "Main App Screen"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: "20sp"
+            bold: True
+            color: 0, 0, 0, 1
+
+        # This acts as a filler between fields, i could also place them lower with the pos property
+        Widget:
+            size_hint_y: None
+            height: dp(10)
+
+        MDRoundFlatButton:
+            text: "Login"
+            pos_hint: {"center_x": .5}
+            on_release:
+                app.root.current = "login"
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDRoundFlatButton:
+            text: "New User"
+            pos_hint: {"center_x": .5}
+            on_release:
+                app.root.current = "register"

@@ -1,0 +1,33 @@
+<Dashboard>:
+
+    MDToolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        elevation: 10
+        title: "Chopping Block"
+        left_action_items: [["dots-vertical", lambda x: nav_drawer.set_state("open")]]
+
+    NavigationLayout:
+        x: toolbar.height
+
+        ScreenManager:
+            id: scr_mngr
+
+            Screen:
+                BoxLayout:
+                    center: root.center
+                    orientation: 'vertical'
+                    Label:
+                        text: "Dashboard"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        font_size: "20sp"
+                        bold: True
+                        color: 0, 0, 0, 1
+
+        NavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: scr_mngr
+                nav_drawer: nav_drawer

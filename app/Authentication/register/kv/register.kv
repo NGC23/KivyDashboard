@@ -1,0 +1,75 @@
+# This is an example of an screen element, i prefer to do this this waym feels much cleaner, so for example, for this screen,
+# i can create an kv file in the domain location, then import it using
+<RegisterScreen>:
+    # Assign class properties here for use to tie to text field id's, then one can send this through to the desired function
+    username_field: username_field
+    password_field: password_field
+    email_field: email_field
+    orientation: 'vertical'
+    # This is settings for the screen itself
+    BoxLayout:
+        center: root.center
+        orientation: 'vertical'
+        size_hint: (1, 0.4)
+        # These are widgets that go into the screen
+        Label:
+            text: "Registration"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: "20sp"
+            bold: True
+            color: 0, 0, 0, 1
+
+        # This acts as a filler between fields, i could also place them lower with the pos property
+        Widget:
+            size_hint_y: None
+            height: dp(10)
+
+        MDTextField:
+            id: username_field
+            name: 'username_field'
+            hint_text: "Username"
+            helper_text: "Enter Username (This will be used for display purposes)"
+            helper_text_mode: "persistent"
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDTextField:
+            id: password_field
+            name: 'password_field'
+            password: True
+            hint_text: "Password"
+            helper_text: "Enter Password here"
+            helper_text_mode: "persistent"
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDTextField:
+            id: email_field
+            name: 'email_field'
+            hint_text: "Email Address"
+            helper_text: "Enter Email (This will be used to send mails if certain services are enabled)"
+            helper_text_mode: "persistent"
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        Label:
+            text: "Enter your Username, Password and Email to register a account"
+            size_hint_y: None
+            height: self.texture_size[1]
+            color: 0, 0, 0, 1
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDRoundFlatButton:
+            text: "Register Account"
+            pos_hint: {"center_x": .5}
+            on_release: root.register_user(root.username_field.text, root.password_field.text, root.email_field.text)

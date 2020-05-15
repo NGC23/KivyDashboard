@@ -1,0 +1,104 @@
+<ItemAdd>:
+    calories: calories
+    food_name: food_name
+    desc: desc
+    fats: fats
+    protein: protein
+    serving_size: serving_size
+
+    MDToolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        elevation: 10
+        title: "Chopping Block"
+        left_action_items: [["dots-vertical", lambda x: nav_drawer.set_state("open")]]
+
+    NavigationLayout:
+        x: toolbar.height
+
+        ScreenManager:
+            id: scr_mngr
+
+            Screen:
+                GridLayout:
+                    cols: 1
+                    pos_hint: {"top": 0.8}
+                    size_hint_y: None
+
+                    MDTextField:
+                        id: food_name
+                        name: 'food_name'
+                        hint_text: "Food Name"
+                        helper_text: "Enter calories intake of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDTextField:
+                        id: desc
+                        name: 'desc'
+                        hint_text: "Food Description"
+                        helper_text: "Enter calories intake of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDTextField:
+                        id: calories
+                        name: 'calories'
+                        hint_text: "Calories"
+                        helper_text: "Enter calories intake of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDTextField:
+                        id: fats
+                        name: 'fats'
+                        hint_text: "Fats"
+                        helper_text: "Enter Fat intake of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDTextField:
+                        id: protein
+                        name: 'protein'
+                        hint_text: "Protein"
+                        helper_text: "Enter Protein intake of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDTextField:
+                        id: serving_size
+                        name: 'serving_size'
+                        hint_text: "Serving Size"
+                        helper_text: "Enter Serving Size of meal"
+                        helper_text_mode: "persistent"
+
+                    Widget:
+                        size_hint_y: None
+                        height: dp(20)
+
+                    MDRoundFlatButton:
+                        text: "Add Item"
+                        on_release: root.add()
+
+
+        NavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: scr_mngr
+                nav_drawer: nav_drawer
