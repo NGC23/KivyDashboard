@@ -1,6 +1,6 @@
 # Kivy Python Dashboard
 
-Please note this is a first Poc Application built using KIVY and Python (First time building app in python - i have a lot to learn, please note i know that this is an expierement), this was purely for the love of programming and approaching KIVY application development much differently to the examples online where they use on file for all screens etc, here i try apply SOLID principles etc.
+Please note this is a first Poc Application built using KIVY and Python (First time building app in python - i have a lot to learn, please note i know that, this is an expierement), this was purely for the love of programming and approaching KIVY application development much differently to the examples online where they use on file for all screens etc, here i try apply SOLID principles etc.
 
 
   - This is my first application built using kivy
